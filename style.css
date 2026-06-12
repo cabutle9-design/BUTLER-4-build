@@ -1,0 +1,193 @@
+/* CSS written by Cheyenne Butler */
+
+/* GLOBAL STYLES - MOBILE FIRST */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.6;
+    background-color: maroon;
+    color: black;
+    display: grid;
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "footer";
+}
+header {
+    grid-area: header;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+header h1 {
+    font-size: 2rem;
+    margin-bottom: .5rem;
+}
+nav {
+    grid-area: nav;
+    background-color: black;
+}
+nav ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+nav a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 1rem;
+    font-weight: bold;
+}
+nav a:hover {
+    background-color: bisque;
+    color: black;
+}
+main {
+    grid-area: main;
+    padding: 1rem;
+    width: 100%;
+}
+section {
+    background-color: white;
+    margin-bottom: 1.5rem;
+    padding: 1.25rem;
+    border-radius: 12px;
+}
+h2 {
+    color: black;
+    margin-bottom: 1rem;
+}
+h3 {
+    color: black;
+    margin-bottom: .75rem;
+}
+p {
+    margin-bottom: 1rem;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+ul,
+ol {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+}
+li {
+    margin-bottom: .5rem;
+}
+.card-row {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.card {
+    background-color: lightgray;
+    padding: 1rem;
+    border: 2px solid bisque;
+    border-radius: 12px;
+}
+.card img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+}
+.album-buttons {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    max-width: 900px;
+    margin: 2rem auto;
+}
+.album-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    transition: transform .3s ease;
+}
+.album-button:hover {
+    transform: scale(1.05);
+}
+.album-button img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border: 3px solid bisque;
+    border-radius: 12px;
+}
+.album-button span {
+    margin-top: .5rem;
+}
+a {
+    color: maroon;
+}
+a:hover {
+    color: black;
+}
+footer {
+    grid-area: footer;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+@media screen and (min-width: 600px) {
+    nav ul {
+        grid-template-columns: 1fr 1fr 1fr;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+}
+    nav a {
+        padding: 1rem 1.5rem;
+}
+    main {
+        padding: 2rem;
+}
+    section {
+        padding: 2rem;
+}
+    .album-buttons {
+        grid-template-columns: repeat(2, 1fr);
+}
+}
+@media screen and (min-width: 800px) {
+    body {
+        grid-template-columns: 1fr;
+}
+    main {
+        max-width: 1200px;
+        margin: 0 auto;
+}
+    header h1 {
+        font-size: 3rem;
+}
+    .card-row {
+        flex-direction: row;
+}
+    .card {
+        flex: 1;
+}
+    .album-buttons {
+        grid-template-columns: repeat(3, 1fr);
+}
+    section {
+        margin-bottom: 2rem;
+}
+}
